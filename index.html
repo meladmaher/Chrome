@@ -1,0 +1,4298 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imge/google.icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>google chrome</title>
+<style>
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #eee;
+    --navColor: black;
+    --fontColor: rgb(255, 255, 255);
+    --hoverColor: rgb(240, 66, 66);
+    --fontEnghlish: font-family: 'Roboto', sans-serif;
+    --card-color: #4CAF50; /* لون افتراضي للكروت */
+    --categories-toggle-bg: #4CAF50; /* لون جديد لإضافة خلفية الزر */
+}
+
+.contaner {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width:768px) {
+    .contaner {
+        width: 750px;
+    }
+}
+
+@media (min-width:992px) {
+    .contaner {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contaner {
+        width: 1170px;
+    }
+}
+
+body {
+    background-color: var(--background);
+    color: var(--fontColor);
+    font-family: 'Roboto', sans-serif;
+    background-position: center !important;
+    min-height: 100vh;
+    background-size: cover !important;
+    position: relative;
+}
+
+/* إضافة طبقة البلور للخلفية */
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(0px);
+    z-index: -1;
+    transition: filter 0.3s ease;
+}
+
+.buttonStyle {
+    background: hsl(223deg 86% 58%)!important;
+    border-radius: 50px !important;
+    color: white !important;
+}
+
+/* ----------Dashboard----------- */
+.Dashboard {
+    width: 92%;
+    height: 92%;
+    background-color: #34003845;
+    background-image: linear-gradient(#03a9f470, #d314b340);
+    z-index: 10000;
+    position: absolute;
+    display: none;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 23px;
+    transition: 0.5s;
+    overflow: scroll;
+}
+
+.Dashboard .blourFilter {
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+    backdrop-filter: blur(1px);
+}
+
+.Dashboard .nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-weight: bold;
+    color: #d5d5d5;
+    margin: 50px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #323232;
+}
+
+.Dashboard .nav ul li {
+    margin-bottom: 30px;
+}
+
+.Dashboard .iconDash {
+    position: absolute;
+    left: 0;
+    top: 11px;
+}
+
+.Dashboard .iconDash i {
+    font-size: 20px;
+    color: #f44336;
+    margin: 0 9px;
+    cursor: pointer;
+    background: #f44336;
+    border-radius: 50%;
+}
+
+.Dashboard .iconDash i:nth-child(2) {
+    background: #8bc34a;
+    color: #8bc34a;
+}
+
+.Dashboard .iconDash i:nth-child(3) {
+    background: #ffeb3b;
+    color: #ffeb3b;
+}
+
+.Colors {
+    outline: none;
+    border: none;
+    width: 49px;
+    height: 39px;
+    background: transparent;
+    cursor: cell;
+}
+
+.ColorCard {
+    height: 86px;
+}
+
+.ColorCard .contaner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.Dashboard span {
+    display: block;
+    width: 38px;
+    height: 32px;
+    background-color: black;
+    cursor: cell;
+    margin: 0 10px;
+}
+
+#FontWhite {
+    background-color: white;
+}
+
+.Dashboard .img {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    display: none;
+}
+
+.Dashboard .img .imgFile {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Dashboard .img .imgFile input {
+    background: #d6f6f6;
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+}
+
+.Dashboard .img .imgFile button {
+    background: #d6f6f6;
+    padding: 10px 10px;
+    margin: 19px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.Dashboard .img .imgFile img {
+    margin: 10px 0;
+}
+
+.Dashboard .img .contaner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    flex-wrap: wrap;
+}
+
+.Dashboard .img .contaner span img {
+    width: 100%;
+}
+
+.Dashboard .animation {
+    width: 100%;
+    height: 99px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    display: none;
+}
+
+.Dashboard .animation button {
+    border: none;
+    outline: none;
+    padding: 11px 10px;
+    background: grey;
+    color: white;
+    cursor: pointer;
+}
+
+.backgroundImge {
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.backgroundImge .inputImge {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.backgroundImge input {
+    background: #d6f6f6;
+    padding: 10px 10px;
+    outline: none;
+    border: none;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.inputImge input {
+    outline: none;
+    border: none;
+    background: #386cf0;
+    margin: 0 40px;
+}
+
+.inputImge img {
+    width: 100px;
+}
+
+.backgroundImge button {
+    background: #d6f6f6;
+    padding: 10px 10px;
+    margin: 19px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* عناصر التحكم في البلور */
+.blur-controls {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blur-slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.blur-slider input[type="range"] {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.blur-preview {
+    width: 200px;
+    height: 120px;
+    margin: 20px 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.blur-preview::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(var(--blur-amount));
+    z-index: -1;
+}
+
+/* --------alert Masseg */
+.blour {
+    width: 100%;
+    height: 100vh;
+    background-color: #85888880;
+    position: absolute;
+    z-index: 10000;
+    display: none;
+    transition: 0.5s;
+}
+
+.blour .alertInpu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    width: 401px;
+    height: auto;
+    background: #ffffff;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    padding: 20px;
+}
+
+.blour .alertInpu .link_icon {
+    width: 95%;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.alertInpu .fa-circle-xmark {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+    font-size: 23px;
+    color: #32b4b2;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.blour .alertInpu .link_icon i {
+    position: absolute;
+    right: 6px;
+    top: 12px;
+    color: #32b4b2;
+}
+
+.blour .alertInpu input {
+    width: 100%;
+    height: 39px;
+    border: none;
+    padding: 0 31px;
+    font-size: 15px;
+    background: #d6f6f6;
+    outline: none;
+    color: black;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px #6a6a6a1c;
+}
+
+.blour .alertInpu button {
+    width: 47%;
+    height: 43px;
+    border: none;
+    font-size: 15px;
+    background: #32b4b2;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* إضافة أنماط جديدة لزر اختيار الصورة */
+.custom-image-btn {
+    width: 100%;
+    height: 39px;
+    background: #d6f6f6;
+    border: none;
+    border-radius: 4px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.custom-image-btn i {
+    margin-left: 8px;
+}
+
+.custom-image-input {
+    display: none;
+}
+
+.custom-image-preview {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: none;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+.contaner {
+    width: 94%;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+nav {
+    width: 100%;
+    height: 44px;
+    background-color: var(--navColor);
+    display: flex;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    color: black;
+    backdrop-filter: blur(20px);
+    opacity: 0.7;
+}
+
+nav .contaner ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .contaner ul li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav .contaner ul li:hover {
+    color: var(--hoverColor);
+}
+
+nav .contaner ul .Darck {
+    overflow: hidden;
+    width: 40px;
+    text-align: center;
+    position: relative;
+    transition: 0.5s;
+}
+
+nav .contaner ul .Darck i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+nav .contaner ul .Darck i:nth-child(2) {
+    margin: 0 64px;
+}
+
+nav .contaner ul .Darck .CoDarck {
+    width: 48px;
+    height: 26px;
+    display: flex;
+    position: relative;
+    position: absolute;
+    transition: 0.5s;
+}
+
+/* contant body--- */
+.BodyContant {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 44px);
+}
+
+
+.topBody {
+    width: 100%;
+    height: 326px;
+}
+
+.topBody .contaner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.img {
+    width: 432px;
+}
+
+.img img {
+    width: 88%;
+}
+
+.topBody .contaner .AllLinks {
+    display: flex;
+    align-items: center;
+    height: 293px;
+    flex-wrap: wrap;
+    width: 372px;
+    flex-direction: column;
+}
+
+.topBody .contaner .link img {
+    width: 50px;
+    border-radius: 50%;
+    z-index: 30;
+    position: relative;
+    box-shadow: 0px 0px 14px;
+    background: white;
+}
+
+.topBody .contaner .link a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.topBody .contaner .link a h5 {
+    font-size: 18px;
+    margin-top: 9px;
+}
+
+.topBody .contaner .link {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 66px;
+    height: 96px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.topBody .contaner .link a span {
+    background: #14151600;
+    width: 73px;
+    height: 73px;
+    position: absolute;
+    top: -4%;
+    border: 4px solid;
+    border-radius: 50pc;
+    border-left-color: #9400d300;
+    display: none;
+}
+
+.topBody .contaner .link a:hover span {
+    animation: border 0.9s linear;
+    animation-iteration-count: initial;
+    animation-direction: alternate-reverse;
+    display: block;
+}
+
+@keyframes border {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(280deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.Time {
+    width: 274px;
+    height: 253px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.Time h1 {
+    font-size: 30px;
+    font-weight: bold;
+    /* color: red; */
+    font-family: Poppins, sans-serif;
+    color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    font-size: 40px;
+    font-weight: 300;
+    display: inline-flex;
+}
+
+.Time .textNot {
+    color: white;
+    width: 100%;
+    display: none;
+    overflow: scroll;
+}
+
+.Time .textNot .textCards {
+    background: #05dfc4;
+    width: 100%;
+    height: 85px;
+    overflow: hidden;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Search {
+    display: flex;
+    height: 61px;
+    margin: 22px 0;
+}
+
+.Search .inpSearch {
+    background: #03a9f4;
+    width: 315px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    margin-left: 4px;
+}
+
+.Search .inpSearch img {
+    width: 13%;
+    margin: 0 9px;
+}
+
+.Search .inpSearch input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 31px;
+    color: white;
+}
+
+.Search i {
+    color: white;
+    height: 100%;
+    width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+
+    cursor: pointer;
+    border-radius: 5px;
+}
+#scrch {
+    margin-left: 16px;
+}
+.bottomBody .contaner .linksCard {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    height: calc(360px - 90px);
+    margin-top: 10px;
+}
+
+.bottomBody .contaner .linksCard .card {
+    width: 240px;
+    height: 93px;
+    background-color: var(--card-color); /* استخدام المتغير للون الكروت */
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    transition: 0.5s;
+    margin: 4px;
+    overflow: hidden;
+    filter: none !important; /* إزالة تأثير البلور */
+    opacity: 1 !important; /* إزالة تأثير الشفافية */
+}
+
+.bottomBody .contaner .linksCard .card:hover {
+    background-color: #3d3d3dd6 !important;
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.bottomBody .contantLinks {
+    position: relative;
+    overflow: hidden;
+}
+
+.bottomBody .contantLinks i {
+    font-size: 20px;
+    position: absolute;
+    right: 9px;
+    top: 31px;
+    color: white;
+    cursor: pointer;
+    padding: 11px 6px;
+}
+
+.bottomBody .contaner .linksCard .card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50pc;
+}
+
+.bottomBody .contaner .linksCard .card h5 {
+    font-size: 20px;
+    margin-right: 51px;
+}
+
+.bottomBody .contaner .linksCard a:hover .card {
+    background-color: #273c3c;
+}
+
+.bottomBody {
+    position: relative;
+}
+
+.bottomBody .fa-square-plus {
+    color: #32b4b2;
+    font-size: 40px;
+    position: absolute;
+    right: 44px;
+    top: 148px;
+    cursor: pointer;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+.hoverClass {
+    transition: 0.5s;
+}
+
+.hoverClass:hover {
+    color: var(--hoverColor) !important;
+}
+
+.Google {
+    background-color: #ffffffb8;
+    width: 300px;
+    height: 270px;
+    position: absolute;
+    left: 17px;
+    top: 50px;
+    z-index: 100000;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 35px;
+    overflow: scroll;
+    display: none;
+}
+
+.Google a {
+    background: rgb(218, 218, 218);
+    width: 70px;
+    height: 70px;
+    display: block;
+    border-radius: 50%;
+    padding: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Google a img {
+    width: 60%;
+}
+
+.settings {
+    background-color: #ffffffb8;
+    width: 300px;
+    height: 270px;
+    position: absolute;
+    /* left: -141px; */
+    top: 50px;
+    z-index: 100000;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    border-radius: 35px;
+    overflow: scroll;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1 !important;
+}
+
+.settings button {
+    background: #4caf50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 172px;
+    height: 47px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.Animations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    top: -2px;
+    display: none;
+}
+
+.Animations span {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    transition: 5s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.Animations span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: anm1 1s linear infinite;
+}
+
+@keyframes anm1 {
+    0% {
+        left: -100%;
+        background-color: red;
+    }
+    50%,100% {
+        left: 100%;
+        background-color: white;
+    }
+}
+
+.Animations span:nth-child(2) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: anm2 1s linear infinite;
+    animation-delay: .5s;
+}
+
+@keyframes anm2 {
+    0% {
+        right: -100%;
+        background-color: #00ff38;
+    }
+    50%,100% {
+        right: 100%;
+        background-color: #00ffff;
+    }
+}
+
+.Animations span:nth-child(3) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: anm3 1s linear infinite;
+    animation-delay: .25s;
+}
+
+@keyframes anm3 {
+    0% {
+        top: -100%;
+        background-color: #003aff;
+    }
+    50%,100% {
+        top: 100%;
+        background-color: #8200ff;
+    }
+}
+
+.Animations span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: anm4 1s linear infinite;
+    animation-delay: .75s;
+}
+
+@keyframes anm4 {
+    0% {
+        bottom: -100%;
+        background-color: #ff4700;
+    }
+    50%,100% {
+        bottom: 100%;
+        background-color: #ff9800;
+    }
+}
+
+/* أنماط القوائم الجديدة */
+.categories-menu {
+    /* position: fixed; */
+    bottom: 80px;
+    right: 20px;
+    z-index: 1000;
+        margin-left: 30px;
+}
+
+.categories-toggle {
+    background: var(--categories-toggle-bg);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories-content {
+    display: none;
+    /* position: absolute; */
+    bottom: 60px;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000000;
+margin: 8px 0px;
+}
+
+.category-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.categories-menu .fa-ellipsis-v {
+  color: black;
+}
+
+.category-item:hover {
+    background: #f5f5f5;
+}
+
+.category-item.active {
+    background: #4CAF50;
+    color: white;
+}
+
+.category-item i {
+    margin-left: 10px;
+}
+
+.add-category-btn {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+#categorySelect {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background:#f0f0f0;
+    color: black;
+}
+
+.link-actions {
+    position: relative;
+    display: inline-block;
+}
+
+.link-menu {
+    display: none;
+    position: fixed;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1000;
+    min-width: 180px;
+}
+
+.link-menu-item {
+    padding: 8px 12px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link-menu-item:hover {
+    background: #f5f5f5;
+}
+
+.menu-trigger {
+    cursor: pointer;
+    padding: 5px;
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+}
+
+.favorite-item {
+    color: gold;
+}
+
+.custom-image-input {
+    display: none;
+}
+
+.custom-image-preview {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: none;
+    margin-bottom: 15px;
+}
+
+.link-menu.show {
+    display: block;
+}
+
+.contantLinks {
+    position: relative;
+    margin: 4px;
+}
+
+.contantLinks .link-actions {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.contantLinks .card {
+    position: relative;
+    padding-right: 30px !important;
+}
+
+.link-menu {
+    display: none;
+    position: fixed;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 180px;
+}
+
+.link-menu.show {
+    display: block;
+}
+
+.link-menu-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    color: #333";
+    font-size: 14px;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.link-menu-item:hover {
+    background: #f5f5f5";
+}
+
+.link-menu-item i {
+    width: 18px;
+    text-align: center;
+}
+
+.fa-star {
+    color: gold;
+}
+
+.link-menu {
+    display: none;
+    position: fixed;
+    background: white;
+    border: 1px solid #ddd";
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 200px;
+    transform-origin: top center;
+    animation: menuAppear 0.3s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+}
+
+@keyframes menuAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.link-menu.hiding {
+    animation: menuDisappear 0.2s ease-in forwards;
+}
+
+@keyframes menuDisappear {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+}
+
+.link-menu-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    color: #333";
+    font-size: 14px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #f0f0f0";
+}
+
+.link-menu-item:last-child {
+    border-bottom: none;
+}
+
+.link-menu-item:hover {
+    background: #f5f5f5";
+    padding-left: 18px;
+}
+
+.link-menu-item i {
+    width: 18px;
+    text-align: center;
+    color: #555";
+}
+
+.fa-star {
+    color: gold !important;
+}
+
+.submenu {
+    position: relative;
+}
+
+.submenu::after {
+    content: "›";
+    position: absolute;
+    right: 15px;
+    font-size: 18px;
+    color: #777";
+}
+
+.submenu-items {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    min-width: 180px;
+    border-left: 1px solid #eee";
+}
+
+.submenu:hover .submenu-items {
+
+    height: 158px;
+    overflow: scroll;
+
+    display: block;
+    animation: submenuAppear 0.4s ease-out;
+}
+
+@keyframes submenuAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.submenu-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+   
+}
+
+.submenu-item:hover {
+    padding-left: 18px;
+    background: #f4f4f4;
+}
+
+.submenu-item.active {
+    background: #4CAF50;
+    color: white;
+}
+
+/* أنماط النوافذ المنبثقة الجديدة */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: popupAppear 0.3s ease-out;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee";
+}
+
+.popup-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333";
+}
+
+.popup-close {
+    cursor: pointer;
+    font-size: 20px;
+    color: #777";
+}
+
+.popup-body {
+    margin-bottom: 20px;
+}
+
+.popup-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.popup-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.popup-btn-primary {
+    background: #4CAF50";
+    color: white;
+}
+
+.popup-btn-secondary {
+    background: #f5f5f5";
+    color: #333";
+}
+
+/* نافذة تعديل الاسم فقط */
+#editNamePopup {
+    display: none;
+}
+
+/* نافذة تعديل الرابط فقط */
+#editUrlPopup {
+    display: none;
+}
+
+/* أنماط Bubble Popup الجديدة */
+.bubble-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 10000;
+    width: 320px;
+    max-width: 90%;
+    display: none;
+    animation: bubbleAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes bubbleAppear {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.bubble-popup.hiding {
+    animation: bubbleDisappear 0.3s ease-out;
+}
+
+@keyframes bubbleDisappear {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+.bubble-popup h3 {
+    margin: 0 0 15px;
+    color: #333";
+    font-size: 18px;
+    text-align: center;
+}
+
+.bubble-input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.bubble-input-group i {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    color: #4CAF50";
+}
+
+.bubble-input {
+    width: 100%;
+    padding: 10px 15px 10px 35px;
+    border: 1px solid #ddd";
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.bubble-input:focus {
+    border-color: #4CAF50";
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.bubble-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.bubble-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.bubble-btn-primary {
+    background: #4CAF50";
+    color: white;
+}
+
+.bubble-btn-primary:hover {
+    background: #3d8b40";
+}
+
+.bubble-btn-secondary {
+    background: #f5f5f5";
+    color: #555";
+}
+
+.bubble-btn-secondary:hover {
+    background: #e0e0e0";
+}
+
+/* تأثيرات إضافية للبطاقات */
+.card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.1);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.card:hover::before {
+    transform: translateY(0);
+}
+
+.card h5 {
+    position: relative;
+    z-index: 1;
+}
+
+.card img {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.1);
+}
+
+/* رسائل التوهج */
+@keyframes toastSlideIn {
+    from { bottom: -50px; opacity: 0; }
+    to { bottom: 20px; opacity: 1; }
+}
+@keyframes toastSlideOut {
+    from { bottom: 20px; opacity: 1; }
+    to { bottom: -50px; opacity: 0; }
+}
+
+/* أنماط جديدة لقص ولصق الروابط */
+.cut-paste-mode .contantLinks {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cut-paste-mode .contantLinks:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.cut-paste-mode .contantLinks.cut {
+    opacity: 0.5;
+    transform: scale(0.95);
+    box-shadow: 0 0 0 2px red;
+}
+
+.cut-paste-mode .contantLinks.paste-target {
+    box-shadow: 0 0 0 2px #4CAF50";
+}
+
+.cut-paste-notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50";
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: toastSlideIn 0.3s ease-out;
+}
+
+.cut-paste-notification button {
+    background: white;
+    color: #4CAF50";
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.cut-paste-notification button.cancel {
+    background: #f44336";
+    color: white;
+}
+
+.cut-paste-notification i {
+    margin-right: 5px;
+}
+
+/* أنماط إدارة الملفات */
+.category-settings-menu {
+    position: fixed;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    min-width: 200px;
+    animation: menuAppear 0.3s ease-out;
+}
+
+.category-settings-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    color: #333";
+    font-size: 14px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid #f0f0f0";
+}
+
+.category-settings-item:last-child {
+    border-bottom: none;
+}
+
+.category-settings-item:hover {
+    background: #f5f5f5";
+    padding-left: 18px;
+}
+
+.category-settings-item i {
+    width: 18px;
+    text-align: center;
+    color: #555";
+}
+
+.category-settings-item.delete {
+    color: #f44336";
+}
+
+.category-settings-item.delete i {
+    color: #f44336";
+}
+
+.emoji-pickers {
+    position: fixed;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    display: none;
+}
+
+.emoji-item {
+    display: inline-block;
+    font-size: 20px;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.emoji-item:hover {
+    transform: scale(1.2);
+}
+
+.color-picker-popup {
+    position: fixed;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: 15px;
+    display: none;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border-color: #333";
+}
+
+.success-toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 10000;
+    animation: toastSlideIn 0.3s ease-out;
+}
+
+/* تحسينات جديدة للنوافذ المنبثقة */
+.popup-content {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    animation: popupAppear 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
+    border: none;
+}
+
+.popup-header {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    padding: 15px 20px;
+    margin: -20px -20px 15px -20px;
+}
+
+.popup-title {
+    color: white;
+    font-weight: bold;
+}
+
+.popup-close {
+    color: white;
+    font-size: 24px;
+}
+
+.popup-btn-primary {
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    border: none;
+}
+
+.popup-btn-primary:hover {
+    background: linear-gradient(135deg, #3d8b40, #689F38);
+}
+
+/* تحسينات القائمة اليمنى */
+.link-menu {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border: none;
+}
+
+.link-menu-item {
+    padding: 12px 20px;
+    transition: all 0.2s;
+}
+
+.link-menu-item:hover {
+    background: #f5f5f5;
+    padding-left: 25px;
+}
+
+.link-menu-item i {
+    color: #4CAF50;
+}
+
+/* تحسينات إضافة الروابط */
+.blour .alertInpu {
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background: white;
+    padding: 25px;
+    width: 90%;
+    max-width: 450px;
+}
+
+.blour .alertInpu .link_icon {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.blour .alertInpu input,
+.blour .alertInpu select {
+    width: 100%;
+    padding: 12px 15px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+
+background: #f0f0f0;
+    font-weight: bold;
+    font-family: var(--fontEnghlish);
+
+}
+
+.blour .alertInpu input:focus,
+.blour .alertInpu select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+.blour .alertInpu button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.blour .alertInpu button:hover {
+    background: linear-gradient(135deg, #3d8b40, #689F38);
+}
+
+/* تحسينات الصورة المخصصة */
+.custom-image-btn {
+    background: #f5f5f5;
+    border: 1px dashed #4CAF50;
+    color: #4CAF50;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.custom-image-btn:hover {
+    background: #e8f5e9;
+}
+
+.custom-image-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid #4CAF50;
+    margin: 10px auto;
+}
+
+/* تحسينات القائمة المنبثقة */
+.link-menu {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+/* حل مشكلة ظهور القائمة في أسفل الشاشة */
+.link-menu {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.link-menu.show {
+    display: block;
+    position: fixed;
+    z-index: 10000;
+    transform: none;
+    animation: none;
+    top: auto !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    max-width: 90%;
+}
+
+@media (max-height: 600px) {
+    .link-menu {
+        max-height: 50vh;
+    }
+}
+
+@media (max-height: 400px) {
+    .link-menu {
+        max-height: 40vh;
+    }
+}
+
+/* تعديلات جديدة للقوائم المنبثقة */
+.submenu-items {
+
+}
+
+.link-menu {
+    bottom: auto !important;
+    top: 100px !important;
+}
+
+/* تعديلات لملفات النظام */
+.system-category {
+    background-color: #f5f5f5 !important;
+    color: #333 !important;
+    font-weight: bold;
+}
+
+.system-category .fa-ellipsis-v {
+    display: none !important;
+}
+
+/* تحسينات القائمة المنبثقة عند النقر بزر الماوس الأيمن */
+.context-menu {
+    position: fixed;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10000;
+    min-width: 200px;
+    animation: menuAppear 0.2s ease-out;
+    display: none;
+}
+
+.context-menu.show {
+    display: block;
+    transform: translateY(-20px) scale(0.95);
+
+
+    position: fixed;
+    background: white;
+    border: 1px solid #ddd"; border-radius: 8px;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+    z-index: 1000;
+    min-width: 200px;
+    transform-origin: top center;
+    animation: menuAppear 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+}
+
+.context-menu-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.context-menu-item:hover {
+    background: #f5f5f5;
+}
+
+.context-menu-item i {
+    width: 18px;
+    text-align: center;
+    color: #555;
+}
+
+.context-menu-item.delete {
+    color: #f44336;
+}
+
+.context-menu-item.delete i {
+    color: #f44336;
+}
+
+/* أنماط نافذة تغيير الصورة */
+.image-change-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 10000;
+    width: 300px;
+    display: none;
+}
+
+.image-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    border: 2px solid #4CAF50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-upload-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.image-change-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.image-change-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-change-confirm {
+    background: #4CAF50;
+    color: white;
+}
+
+.image-change-cancel {
+    background: #f44336;
+    color: white;
+}
+
+/* تحسينات جديدة لنافذة إضافة الروابط */
+.alertInpu {
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    position: relative;
+    animation: bubbleAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alertInpu h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-group i {
+position: absolute;
+    left: 7px;
+    top: 40%;
+    transform: translateY(-50%);
+   color: #707070;
+    font-size: 18px;
+}
+
+.input-group .fa-folder  {
+    position: absolute;
+    top: 50%;
+}
+
+.alertInpu input, 
+.alertInpu select {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.alertInpu input:focus, 
+.alertInpu select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.alertInpu button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #4CAF50, #8BC34A);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.alertInpu button:hover {
+    background: linear-gradient(135deg, #3d8b40, #689F38);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* تصميم دائرة الصورة */
+.image-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 3px dashed #4CAF50;
+    position: relative;
+    cursor: pointer;
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-circle i {
+    font-size: 30px;
+    color: #4CAF50;
+}
+
+.image-circle input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.change-image-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.change-image-btn:hover {
+    background: #3d8b40;
+}
+
+/* رسائل التنبيه */
+.alert-message {
+    display: none;
+    padding: 10px 15px;
+    background: #f44336;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+/* تأثيرات إضافية */
+.alertInpu .fa-circle-xmark {
+    transition: all 0.3s;
+}
+
+.alertInpu .fa-circle-xmark:hover {
+    transform: rotate(90deg);
+    color: #f44336;
+}
+
+/* تصميم متجاوب */
+@media (max-width: 600px) {
+    .alertInpu {
+        width: 95%;
+        padding: 20px;
+    }
+    
+    .alertInpu h2 {
+        font-size: 20px;
+    }
+    
+    .alertInpu input, 
+    .alertInpu select {
+        padding: 10px 15px 10px 40px;
+        font-size: 14px;
+    }
+    
+    .image-circle {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* التاريخ بالعربي */
+.date-display {
+    font-size: 20px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    direction: rtl;
+}
+</style>
+</head>
+<body>
+  <!-- طبقة البلور للخلفية -->
+  <div class="background-blur" id="backgroundBlur"></div>
+  
+  <div class="Dashboard">
+    <div class="blourFilter">
+    </div>
+    <div class="nav">
+      <ul>
+        <li onclick="MinColor()">Min Color</li>
+        <li onclick="Animation()">Animation</li>
+        <li onclick="ImgeMove()">Imge Move</li>
+        <li onclick="Background()">Background</li>
+      </ul>
+    </div>
+    <div class="iconDash">
+      <i onclick="HedDashboard()" class="fa-solid hoverClass fa-circle-arrow-left"></i>
+      <i onclick="SmollDashboard()" class="fa-solid hoverClass fa-circle-arrow-left"></i>
+      <i onclick="MinimizeDashboard()" class="fa-solid hoverClass fa-circle-arrow-left"></i>
+    </div>
+    <div class="ColorCard">
+      <div class="contaner">
+        <h5>Color Card</h5>
+        <input class="Colors" id="colorCard" type="color" name="" value="#4CAF50">
+      </div>
+    </div>
+    <div class="ColorCard">
+      <div class="contaner">
+        <h5>Fonts Card</h5>
+        <span id="FontBlack"></span>
+        <span id="FontWhite"></span>
+      </div>
+    </div>
+    <div id="ImgeGIFMove" class="img">
+      <div class="imgFile">
+        <div class="">
+          <input class="buttonStyle" id="inputImgeGIF" type="text" name="" value="">
+          <button class="buttonStyle" id="buttonImgeGIF"> Change Imge </button>
+        </div>
+      </div>
+    <div class="contaner">
+      <span onclick="RemoveImge()"></span>
+      <span onclick="Img1()"> <img src="ImgMoveng/default/1.gif" alt=""> </span>
+      <span onclick="Img2()"><img src="ImgMoveng/default/2.gif" alt=""> </span>
+      <span onclick="Img3()"><img src="ImgMoveng/default/3.gif" alt=""> </span>
+      <span onclick="Img4()"><img src="ImgMoveng/default/4.gif" alt=""> </span>
+      <span onclick="Img5()"><img src="ImgMoveng/default/5.gif" alt=""> </span>
+      <span onclick="Img6()"><img src="ImgMoveng/default/6.gif" alt=""> </span>
+      <span onclick="Img7()"><img src="ImgMoveng/default/7.gif" alt=""> </span>
+      <span onclick="Img8()"><img src="ImgMoveng/default/8.gif" alt=""> </span>
+      <span onclick="Img9()"><img src="ImgMoveng/default/9.gif" alt=""> </span>
+      <span onclick="Img12()"><img src="ImgMoveng/default/12.gif" alt=""> </span>
+      <span onclick="Img13()"><img src="ImgMoveng/default/13.gif" alt=""> </span>
+      <span onclick="Img23()"><img src="ImgMoveng/default/23.gif" alt=""> </span>
+      <span onclick="Img25()"><img src="ImgMoveng/default/25.gif" alt=""> </span>
+    </div>
+    </div>
+
+    <div class="animation">
+      <button class="buttonStyle" onclick="StopAnmi()">Stop Animations</button>
+      <button class="buttonStyle" onclick="StartAnmi()">Start Animation</button>
+    </div>
+
+    <div class="backgroundImge">
+      <div class="inputImge">
+        <input class="buttonStyle" type="text" id="imageInput" value="">
+        <button class="buttonStyle" onclick="changBackground()">chang Background</button>
+      </div>
+      <div class="inputImge">
+        <input type="file" id="backgroundInput" accept="image/*">
+        <img id="myImageBackground" src="" alt="صورة">
+      </div>
+      
+      <!-- عناصر التحكم في البلور -->
+      <div class="blur-controls">
+        <div class="blur-slider">
+          <span>Blur Amount:</span>
+          <input type="range" id="blurSlider" min="0" max="20" value="0">
+          <span id="blurValue">0px</span>
+        </div>
+        <div class="blur-preview" id="blurPreview"></div>
+        <button class="buttonStyle" onclick="saveBlurSettings()">Save Blur Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="blour" class="blour">
+    <div id="alertInpu" class="alertInpu">
+      <i onclick="closeCard()" class="fa-solid hoverClass fa-circle-xmark"></i>
+      <h2>إضافة رابط جديد</h2>
+      <div id="alertMessage" class="alert-message">الرجاء إدخال اسم الرابط ورابط الصفحة</div>
+      
+      <div class="image-upload-container">
+        <div class="image-circle" onclick="document.getElementById('customImageInput').click()">
+          <i class="fas fa-image"></i>
+          <img id="customImagePreview" src="" alt="صورة الرابط" style="display: none;">
+          <input type="file" id="customImageInput" class="custom-image-input" accept="image/*">
+        </div>
+        <button class="change-image-btn" onclick="document.getElementById('customImageInput').click()">تغيير الصورة</button>
+      </div>
+      
+      <div class="input-group">
+        <i class="fa-solid fa-link"></i>
+        <input id="inputLinks" type="url" placeholder="أدخل رابط الصفحة">
+      </div>
+      
+      <div class="input-group">
+        <i class="fa-solid fa-file-signature"></i>
+        <input id="inputName" type="text" placeholder="أدخل اسم الرابط">
+      </div>
+      
+      <div class="input-group">
+        <i class="fa-solid fa-folder"></i>
+        <select id="categorySelect"></select>
+      </div>
+      
+      <button onclick="addCardLinks()">إضافة الرابط</button>
+    </div>
+  </div>
+
+  <!-- Bubble Popup لإضافة قوائم جديدة -->
+<div id="categoryPopup" class="bubble-popup">
+    <h3>إضافة قائمة جديدة</h3>
+    <div class="bubble-input-group">
+        <i class="fas fa-folder"></i>
+        <input type="text" id="newCategoryName" class="bubble-input" placeholder="اسم القائمة الجديدة">
+    </div>
+    <div class="bubble-buttons">
+        <button class="bubble-btn bubble-btn-secondary" onclick="hideCategoryPopup()">إلغاء</button>
+        <button class="bubble-btn bubble-btn-primary" onclick="saveNewCategory()">حفظ</button>
+    </div>
+</div>
+
+<!-- نافذة تعديل الاسم فقط -->
+<div id="editNamePopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <div class="popup-title">تعديل اسم الرابط</div>
+            <div class="popup-close" onclick="hideEditNamePopup()">&times;</div>
+        </div>
+        <div class="popup-body">
+            <div class="link_icon">
+                <i class="fa-solid fa-file-signature"></i>
+                <input id="editNameInput" type="text" placeholder="اسم الرابط الجديد">
+            </div>
+        </div>
+        <div class="popup-footer">
+            <button class="popup-btn popup-btn-secondary" onclick="hideEditNamePopup()">إلغاء</button>
+            <button class="popup-btn popup-btn-primary" onclick="saveNameChanges()">حفظ</button>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة تعديل الرابط فقط -->
+<div id="editUrlPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <div class="popup-title">تعديل رابط الصفحة</div>
+            <div class="popup-close" onclick="hideEditUrlPopup()">&times;</div>
+        </div>
+        <div class="popup-body">
+            <div class="link_icon">
+                <i class="fa-solid fa-link"></i>
+                <input id="editUrlInput" type="text" placeholder="رابط الصفحة الجديد">
+            </div>
+        </div>
+        <div class="popup-footer">
+            <button class="popup-btn popup-btn-secondary" onclick="hideEditUrlPopup()">إلغاء</button>
+            <button class="popup-btn popup-btn-primary" onclick="saveUrlChanges()">حفظ</button>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة تأكيد الحذف -->
+<div id="deleteConfirmPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <div class="popup-title">حذف الرابط</div>
+            <div class="popup-close" onclick="hideDeletePopup()">&times;</div>
+        </div>
+        <div class="popup-body">
+            <p>هل أنت متأكد من حذف هذا الرابط؟</p>
+        </div>
+        <div class="popup-footer">
+            <button class="popup-btn popup-btn-secondary" onclick="hideDeletePopup()">إلغاء</button>
+            <button class="popup-btn popup-btn-primary" onclick="confirmDeleteLink()">حذف</button>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة تأكيد حذف الملف -->
+<div id="deleteCategoryPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <div class="popup-title">حذف الملف</div>
+            <div class="popup-close" onclick="hideDeleteCategoryPopup()">&times;</div>
+        </div>
+        <div class="popup-body">
+            <p>هل أنت متأكد من حذف هذا الملف؟ سيتم حذف جميع الروابط الموجودة فيه!</p>
+        </div>
+        <div class="popup-footer">
+            <button class="popup-btn popup-btn-secondary" onclick="hideDeleteCategoryPopup()">إلغاء</button>
+            <button class="popup-btn popup-btn-primary" onclick="confirmDeleteCategory()">حذف</button>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة تعديل الملف -->
+<div id="editCategoryPopup" class="popup-overlay">
+    <div class="popup-content">
+        <div class="popup-header">
+            <div class="popup-title">تعديل الملف</div>
+            <div class="popup-close" onclick="hideEditCategoryPopup()">&times;</div>
+        </div>
+        <div class="popup-body">
+            <div class="bubble-input-group">
+                <i class="fas fa-folder"></i>
+                <input type="text" id="editCategoryName" class="bubble-input" placeholder="اسم الملف الجديد">
+            </div>
+            <div class="bubble-input-group">
+                <i class="fas fa-palette"></i>
+                <input type="color" id="editCategoryColor" class="bubble-input" value="#4CAF50">
+            </div>
+        </div>
+        <div class="popup-footer">
+            <button class="popup-btn popup-btn-secondary" onclick="hideEditCategoryPopup()">إلغاء</button>
+            <button class="popup-btn popup-btn-primary" onclick="saveCategoryChanges()">حفظ</button>
+        </div>
+    </div>
+</div>
+
+<!-- نافذة اختيار اللون -->
+<div id="colorPickerPopup" class="color-picker-popup">
+    <h3>اختر لونًا للملف</h3>
+    <div id="colorOptions"></div>
+</div>
+
+<!-- قائمة السياق عند النقر بزر الماوس الأيمن -->
+<div id="contextMenu" class="context-menu"></div>
+
+<!-- نافذة تغيير الصورة -->
+<div id="imageChangePopup" class="image-change-popup">
+    <h3>تغيير صورة الرابط</h3>
+    <div class="image-preview">
+        <img id="imageChangePreview" src="" alt="Preview">
+    </div>
+    <label for="imageChangeInput" class="image-upload-btn">
+        <i class="fas fa-upload"></i> تحميل صورة
+    </label>
+    <input type="file" id="imageChangeInput" accept="image/*" style="display: none;">
+    <div class="image-change-buttons">
+        <button class="image-change-cancel" onclick="hideImageChangePopup()">إلغاء</button>
+        <button class="image-change-confirm" onclick="confirmImageChange()">تأكيد</button>
+    </div>
+</div>
+
+<div class="settings" id="ThisBoxSetting">
+  <button onclick="self()" type="button" name="button">self</button>
+  <button onclick="Blank()" type="button" name="button">blank</button>
+  <button onclick="HedAndShowDash()" type="button" name="button">DashBord</button>
+</div>
+  <nav>
+    <div class="contaner">
+      <ul>
+        <li><i id="google_box" class="fa-brands fa-google"></i>
+        <div class="Google">
+          <a href="https://www.google.com/maps">
+            <img src="imge/map.png" alt="">
+          </a>
+          <a href="https://www.youtube.com/">
+            <img src="imge/youtube.png" alt="">
+          </a>
+          <a href="https://mail.google.com/mail/">
+            <img src="imge/gmail.png" alt="">
+          </a>
+          <a href="https://play.google.com/store/games?device=windows">
+            <img src="imge/play.png" alt="">
+          </a>
+          <a href="https://drive.google.com/">
+            <img src="imge/driv.png" alt="">
+          </a>
+        </div>
+        </li>
+        <li><i id="settings" onclick="settings_box()" class="fa-solid fa-gear"></i>
+
+        </li>
+        <li class="Darck" id="darckLight">
+          <div id="dar" class="CoDarck">
+            <i class="fa-solid fa-moon"></i>
+            <i class="fa-solid fa-sun"></i>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<div class="BodyContant">
+<div class="topBody">
+    <div class="contaner">
+      <div class="Animations">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="img">
+        <img id="ImgeGif" src="ImgMoveng/3.gif" alt="">
+      </div>
+      <div class="AllLinks">
+        <!-- الروابط المثبته ستظهر هنا -->
+      </div>
+      <div class="Time">
+        <h1 id="clock"></h1>
+        <div id="date" class="date-display"></div>
+        <div class="textNot">
+          <div class="textCards">
+            <i class="fa-solid hoverClass fa-circle-xmark"></i>
+            <p>اتمام مشروع كروم</p>
+          </div>
+          <div class="textCards">
+          </div>
+          <div class="textCards">
+          </div>
+          <div class="textCards">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- ------------   down contant ----------------- -->
+
+  <div class="bottomBody">
+    <div class="contaner">
+      <div id="searchgoogle" class="Search">
+        <div id="contantInput" class="inpSearch">
+          <img src="imge/Google.png" alt="">
+          <input id="inpPass" type="text" name="" onkeydown="handleKeyPress(event)">
+        </div>
+        <i id="scrch" onclick="searchGoogle()" class="fa-solid fa-magnifying-glass"></i>
+        <div class="categories-menu">
+          <div class="categories-toggle" onclick="toggleCategories()">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="categories-content" id="categoriesContent">
+            <div class="category-item system-category active"><span>الرئيسية</span></div>
+            <div class="category-item system-category"><span>جميع الروابط</span></div>
+            <div class="category-item"><span>trading</span><i class="fas fa-ellipsis-v" style="margin-left: 10px; cursor: pointer;"></i></div>
+            <div class="category-item"><span>افلام و مسلسلات</span><i class="fas fa-ellipsis-v" style="margin-left: 10px; cursor: pointer;"></i></div>
+            <div class="category-item"><span>AI app2</span><i class="fas fa-ellipsis-v" style="margin-left: 10px; cursor: pointer;"></i></div>
+            <div class="category-item"><span>hjj</span><i class="fas fa-ellipsis-v" style="margin-left: 10px; cursor: pointer;"></i></div>
+            <div class="category-item add-category-btn"><i class="fas fa-plus"></i> إضافة قائمة</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <i onclick="addLink()" class="fa-solid hoverClass fa-square-plus"></i>
+    <div class="contaner">
+      <div class="Animations">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="linksCard" class="linksCard">
+        <!-- الروابط ستظهر هنا -->
+      </div>
+    </div>
+  </div>
+<!-- ------------------ End down contant ------- -->
+</div>
+<script>
+// البيانات والمتغيرات
+let darckLight = document.getElementById("darckLight");
+let dar = document.getElementById("dar");
+let nav = document.querySelector("nav");
+let inputLinks = document.getElementById("inputLinks");
+let inputName = document.getElementById("inputName");
+let links = []; // سيتم ملؤها من IndexedDB
+let categories = [
+    { "name": "الرئيسية", "id": "main", "default": true, "color": "#4CAF50", "system": true },
+    { "name": "جميع الروابط", "id": "all", "default": true, "color": "#2196F3", "system": true },
+    { "name": "المفضلة", "id": "favorites", "default": true, "color": "#FFC107" }
+];
+let currentCategory = "main";
+let currentLinkIndex = null;
+let currentCategoryIndex = null;
+let cutLinkIndex = null; // متغير لتخزين الرابط المقطوع
+let currentLinkForImageChange = null; // متغير لتخزين الرابط الذي يتم تغيير صورته
+let lastOpenedMenu = null; // متغير لتخزين آخر قائمة تم فتحها
+
+// تهيئة IndexedDB
+let db;
+const DB_NAME = "LinksDB";
+const DB_VERSION = 1;
+const LINKS_STORE = "links";
+const CATEGORIES_STORE = "categories";
+const SETTINGS_STORE = "settings";
+
+function initDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        
+        request.onerror = (event) => {
+            console.error("Error opening database:", event.target.error);
+            reject("Error opening database");
+        };
+        
+        request.onsuccess = (event) => {
+            db = event.target.result;
+            console.log("Database opened successfully");
+            
+            // تحميل البيانات من IndexedDB
+            loadData().then(resolve).catch(reject);
+        };
+        
+        request.onupgradeneeded = (event) => {
+            const db = event.target.result;
+            
+            // إنشاء مخزن للروابط إذا لم يكن موجودًا
+            if (!db.objectStoreNames.contains(LINKS_STORE)) {
+                const linksStore = db.createObjectStore(LINKS_STORE, { keyPath: "id", autoIncrement: true });
+                linksStore.createIndex("category", "category", { unique: false });
+                linksStore.createIndex("isFavorite", "isFavorite", { unique: false });
+            }
+            
+            // إنشاء مخزن للفئات إذا لم يكن موجودًا
+            if (!db.objectStoreNames.contains(CATEGORIES_STORE)) {
+                const categoriesStore = db.createObjectStore(CATEGORIES_STORE, { keyPath: "id" });
+            }
+            
+            // إنشاء مخزن للإعدادات إذا لم يكن موجودًا
+            if (!db.objectStoreNames.contains(SETTINGS_STORE)) {
+                const settingsStore = db.createObjectStore(SETTINGS_STORE, { keyPath: "name" });
+            }
+            
+            // إضافة الفئات الافتراضية
+            const transaction = event.target.transaction;
+            const categoriesStore = transaction.objectStore(CATEGORIES_STORE);
+            
+            categories.forEach(category => {
+                categoriesStore.add(category);
+            });
+            
+            // إضافة الإعدادات الافتراضية
+            const settingsStore = transaction.objectStore(SETTINGS_STORE);
+            settingsStore.add({ name: "currentCategory", value: "main" });
+            settingsStore.add({ name: "colorCard", value: "#4CAF50" });
+            settingsStore.add({ name: "colorFonts", value: "black" });
+            settingsStore.add({ name: "OpenLinks", value: "_self" });
+            settingsStore.add({ name: "backgroundBlur", value: "0" }); // إضافة إعداد البلور
+        };
+    });
+}
+
+// تحميل البيانات من IndexedDB
+function loadData() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction([LINKS_STORE, CATEGORIES_STORE, SETTINGS_STORE], "readonly");
+        
+        // تحميل الروابط
+        const linksStore = transaction.objectStore(LINKS_STORE);
+        const linksRequest = linksStore.getAll();
+        
+        linksRequest.onsuccess = (event) => {
+            links = event.target.result || [];
+        };
+        
+        linksRequest.onerror = (event) => {
+            console.error("Error loading links:", event.target.error);
+        };
+        
+        // تحميل الفئات
+        const categoriesStore = transaction.objectStore(CATEGORIES_STORE);
+        const categoriesRequest = categoriesStore.getAll();
+        
+        categoriesRequest.onsuccess = (event) => {
+            const loadedCategories = event.target.result || [];
+            if (loadedCategories.length > 0) {
+                categories = loadedCategories;
+            }
+        };
+        
+        categoriesRequest.onerror = (event) => {
+            console.error("Error loading categories:", event.target.error);
+        };
+        
+        // تحميل الإعدادات
+        const settingsStore = transaction.objectStore(SETTINGS_STORE);
+        
+        // تحميل الفئة الحالية
+        const currentCategoryRequest = settingsStore.get("currentCategory");
+        currentCategoryRequest.onsuccess = (event) => {
+            if (event.target.result) {
+                currentCategory = event.target.result.value;
+            }
+        };
+        
+        // تحميل لون الكروت
+        const colorCardRequest = settingsStore.get("colorCard");
+        colorCardRequest.onsuccess = (event) => {
+            if (event.target.result) {
+                document.documentElement.style.setProperty('--card-color', event.target.result.value);
+                document.documentElement.style.setProperty('--categories-toggle-bg', event.target.result.value);
+            }
+        };
+        
+        // تحميل لون الخطوط
+        const colorFontsRequest = settingsStore.get("colorFonts");
+        colorFontsRequest.onsuccess = (event) => {
+            if (event.target.result) {
+                colorsFontsf();
+            }
+        };
+        
+        // تحميل إعدادات فتح الروابط
+        const openLinksRequest = settingsStore.get("OpenLinks");
+        openLinksRequest.onsuccess = (event) => {
+            if (event.target.result) {
+                getTarget();
+            }
+        };
+        
+        // تحميل إعدادات البلور
+        const blurRequest = settingsStore.get("backgroundBlur");
+        blurRequest.onsuccess = (event) => {
+            if (event.target.result) {
+                const blurAmount = event.target.result.value;
+                document.getElementById('backgroundBlur').style.filter = `blur(${blurAmount}px)`;
+                document.getElementById('blurSlider').value = blurAmount;
+                document.getElementById('blurValue').textContent = `${blurAmount}px`;
+            }
+        };
+        
+        transaction.oncomplete = () => {
+            console.log("All data loaded successfully");
+            resolve();
+        };
+        
+        transaction.onerror = (event) => {
+            console.error("Transaction error:", event.target.error);
+            reject("Error loading data");
+        };
+    });
+}
+
+// حفظ الروابط في IndexedDB
+function saveLinks() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction([LINKS_STORE], "readwrite");
+        const linksStore = transaction.objectStore(LINKS_STORE);
+        
+        // مسح جميع الروابط الحالية
+        const clearRequest = linksStore.clear();
+        
+        clearRequest.onsuccess = () => {
+            // إضافة جميع الروابط الجديدة
+            let requests = [];
+            
+            links.forEach(link => {
+                const addRequest = linksStore.add(link);
+                requests.push(addRequest);
+            });
+            
+            // التصحيح هنا: إضافة القوس المفقود وإصلاح بناء الجملة
+            Promise.all(requests.map(req => {
+                return new Promise((res, rej) => {
+                    req.onsuccess = res;
+                    req.onerror = rej;
+                });
+            }))
+            .then(resolve)
+            .catch(reject);
+        };
+        
+        clearRequest.onerror = (event) => {
+            console.error("Error clearing links:", event.target.error);
+            reject("Error clearing links");
+        };
+    });
+}
+
+// حفظ الفئات في IndexedDB
+function saveCategories() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction([CATEGORIES_STORE], "readwrite");
+        const categoriesStore = transaction.objectStore(CATEGORIES_STORE);
+        
+        // مسح جميع الفئات الحالية
+        const clearRequest = categoriesStore.clear();
+        
+        clearRequest.onsuccess = () => {
+            // إضافة جميع الفئات الجديدة
+            let requests = [];
+            
+            categories.forEach(category => {
+                const addRequest = categoriesStore.add(category);
+                requests.push(addRequest);
+            });
+            
+            // التصحيح هنا: إضافة القوس المفقود وإصلاح بناء الجملة
+            Promise.all(
+                requests.map(req => {
+                    return new Promise((res, rej) => {
+                        req.onsuccess = res;
+                        req.onerror = rej;
+                    });
+                })
+            )
+            .then(resolve)
+            .catch(reject);
+        };
+        
+        clearRequest.onerror = (event) => {
+            console.error("Error clearing categories:", event.target.error);
+            reject("Error clearing categories");
+        };
+    });
+}
+// حفظ الإعدادات في IndexedDB
+function saveSetting(name, value) {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction([SETTINGS_STORE], "readwrite");
+        const settingsStore = transaction.objectStore(SETTINGS_STORE);
+        
+        const request = settingsStore.put({ name, value });
+        
+        request.onsuccess = resolve;
+        request.onerror = (event) => {
+            console.error(`Error saving setting ${name}:`, event.target.error);
+            reject(`Error saving setting ${name}`);
+        };
+    });
+}
+
+// وظائف الوضع الليلي
+function wh() {
+    document.body.style.background = "#eee";
+    nav.style.backgroundColor = "black";
+    nav.style.color = "#eee";
+    document.body.style.color = "black";
+    dar.style.cssText = `transition: 0.5s; left: -165%;`;
+    saveSetting("black", false).catch(console.error);
+}
+
+function black() {
+    document.body.style.background = "black";
+    document.body.style.color = "black";
+    nav.style.backgroundColor = "#eee";
+    nav.style.color = "black";
+    dar.style.cssText = `transition: 0.5s; left: 0px;`;
+    saveSetting("black", true).catch(console.error);
+}
+
+// تحميل وضع الليلي عند التحميل
+function loadDarkMode() {
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction([SETTINGS_STORE], "readonly");
+        const settingsStore = transaction.objectStore(SETTINGS_STORE);
+        
+        const request = settingsStore.get("black");
+        
+        request.onsuccess = (event) => {
+            if (event.target.result && event.target.result.value) {
+                black();
+            } else {
+                wh();
+            }
+            resolve();
+        };
+        
+        request.onerror = (event) => {
+            console.error("Error loading dark mode setting:", event.target.error);
+            wh(); // الوضع الافتراضي
+            resolve();
+        };
+    });
+}
+
+darckLight.onclick = () => {
+    if (document.body.style.background == "black") {
+        wh();
+    } else {
+        black();
+    }
+};
+
+// وظائف إدارة الروابط
+function inpClerText() {
+    inputLinks.value = '';
+    inputName.value = '';
+    document.getElementById('customImageInput').value = '';
+    document.getElementById('customImagePreview').style.display = 'none';
+    document.getElementById('customImagePreview').src = '';
+    document.getElementById('alertMessage').style.display = 'none';
+}
+
+function addLink() {
+    document.getElementById("blour").style.display = "block";
+    fillCategorySelect();
+    // تعيين القائمة الافتراضية إلى "الرئيسية"
+    document.getElementById('categorySelect').value = 'main';
+    inpClerText();
+}
+
+function closeCard() {
+    document.getElementById("blour").style.display = "none";
+    inpClerText();
+}
+
+function fillCategoriesMenu() {
+    const content = document.getElementById('categoriesContent');
+    content.innerHTML = '';
+
+    // إضافة الرئيسية أولاً
+    const mainCategory = categories.find(cat => cat.id === "main");
+    if (mainCategory) {
+        const item = document.createElement('div');
+        item.className = 'category-item system-category';
+        if (currentCategory === "main") item.classList.add('active');
+        item.innerHTML = `<span>${mainCategory.name}</span>`;
+        item.onclick = () => {
+            currentCategory = "main";
+            saveSetting("currentCategory", currentCategory).catch(console.error);
+            fillCategoriesMenu();
+            fillLinks();
+        };
+        content.appendChild(item);
+    }
+
+    // إضافة جميع الروابط ثانياً
+    const allCategory = categories.find(cat => cat.id === "all");
+    if (allCategory) {
+        const item = document.createElement('div');
+        item.className = 'category-item system-category';
+        if (currentCategory === "all") item.classList.add('active');
+        item.innerHTML = `<span>${allCategory.name}</span>`;
+        item.onclick = () => {
+            currentCategory = "all";
+            saveSetting("currentCategory", currentCategory).catch(console.error);
+            fillCategoriesMenu();
+            fillLinks();
+        };
+        content.appendChild(item);
+    }
+
+    // إضافة الفئات الأخرى
+    categories.forEach((category, index) => {
+        if (category.system) return; // تخطي الفئات النظامية التي أضفناها بالفعل
+
+        const item = document.createElement('div');
+        item.className = 'category-item';
+        if (category.id === currentCategory) {
+            item.classList.add('active');
+        }
+
+        item.innerHTML = `<span>${category.name}</span>`;
+
+        // إضافة النقاط الثلاث لإدارة الملف (فقط للملفات غير النظامية)
+        const menuTrigger = document.createElement('i');
+        menuTrigger.className = 'fas fa-ellipsis-v';
+        menuTrigger.style.marginLeft = '10px';
+        menuTrigger.style.cursor = 'pointer';
+        menuTrigger.onclick = (e) => {
+            e.stopPropagation();
+            showCategorySettings(e, index);
+        };
+
+        item.appendChild(menuTrigger);
+
+        item.onclick = () => {
+            currentCategory = category.id;
+            saveSetting("currentCategory", currentCategory).catch(console.error);
+            fillCategoriesMenu();
+            fillLinks();
+        };
+
+        content.appendChild(item);
+    });
+
+    const addBtn = document.createElement('div');
+    addBtn.className = 'category-item add-category-btn';
+    addBtn.innerHTML = '<i class="fas fa-plus"></i> إضافة قائمة';
+    addBtn.onclick = showCategoryPopup;
+    content.appendChild(addBtn);
+}
+
+function showCategorySettings(e, index) {
+    e.stopPropagation();
+
+    const existingMenu = document.getElementById('categorySettingsMenu');
+    if (existingMenu) {
+        existingMenu.remove();
+    }
+
+    const menu = document.createElement('div');
+    menu.id = 'categorySettingsMenu';
+    menu.className = 'category-settings-menu';
+
+    const x = Math.min(e.clientX, window.innerWidth - 220);
+    const y = Math.min(e.clientY, window.innerHeight - 200);
+
+    menu.style.left = `${x}px`;
+    menu.style.top = `${y}px`;
+
+    const editItem = document.createElement('div');
+    editItem.className = 'category-settings-item';
+    editItem.innerHTML = '<i class="fas fa-edit"></i> تعديل الملف';
+    editItem.onclick = () => {
+        showEditCategoryPopup(index);
+        menu.remove();
+    };
+
+    const deleteItem = document.createElement('div');
+    deleteItem.className = 'category-settings-item delete';
+    deleteItem.innerHTML = '<i class="fas fa-trash"></i> حذف الملف';
+    deleteItem.onclick = () => {
+        showDeleteCategoryPopup(index);
+        menu.remove();
+    };
+
+    menu.appendChild(editItem);
+    menu.appendChild(deleteItem);
+
+    document.body.appendChild(menu);
+
+    // إغلاق القائمة عند النقر خارجها
+    const closeMenu = (ev) => {
+        if (!menu.contains(ev.target)) {
+            menu.remove();
+            document.removeEventListener('click', closeMenu);
+        }
+    };
+
+    setTimeout(() => {
+        document.addEventListener('click', closeMenu);
+    }, 10);
+}
+
+function showEditCategoryPopup(index) {
+    currentCategoryIndex = index;
+    const category = categories[index];
+    document.getElementById('editCategoryName').value = category.name;
+    document.getElementById('editCategoryColor').value = category.color || '#4CAF50';
+    document.getElementById('editCategoryPopup').style.display = 'flex';
+}
+
+function hideEditCategoryPopup() {
+    document.getElementById('editCategoryPopup').style.display = 'none';
+}
+
+function saveCategoryChanges() {
+    const newName = document.getElementById('editCategoryName').value;
+    const newColor = document.getElementById('editCategoryColor').value;
+
+    if (newName && newName.trim() !== "") {
+        categories[currentCategoryIndex].name = newName;
+        categories[currentCategoryIndex].color = newColor;
+        
+        saveCategories()
+            .then(() => {
+                fillCategoriesMenu();
+                fillLinks();
+                hideEditCategoryPopup();
+            })
+            .catch(console.error);
+    }
+}
+
+function showDeleteCategoryPopup(index) {
+    currentCategoryIndex = index;
+    document.getElementById('deleteCategoryPopup').style.display = 'flex';
+}
+
+function hideDeleteCategoryPopup() {
+    document.getElementById('deleteCategoryPopup').style.display = 'none';
+}
+
+function confirmDeleteCategory() {
+    // لا يمكن حذف الملفات النظامية
+    if (categories[currentCategoryIndex].system) {
+        alert('لا يمكن حذف الملفات النظامية');
+        hideDeleteCategoryPopup();
+        return;
+    }
+
+    // حذف جميع الروابط المرتبطة بهذا الملف
+    links = links.filter(link => link.category !== categories[currentCategoryIndex].id);
+
+    // حذف الملف
+    categories.splice(currentCategoryIndex, 1);
+
+    // إذا كان الملف المحذوف هو الملف الحالي، نعود إلى الملف الرئيسي
+    if (currentCategory === categories[currentCategoryIndex]?.id) {
+        currentCategory = 'main';
+        saveSetting("currentCategory", currentCategory).catch(console.error);
+    }
+
+    saveCategories()
+        .then(() => {
+            saveLinks()
+                .then(() => {
+                    fillCategoriesMenu();
+                    fillLinks();
+                    hideDeleteCategoryPopup();
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+}
+
+function fillCategorySelect() {
+    const select = document.getElementById('categorySelect');
+    select.innerHTML = categories.filter(cat => !cat.system).map(cat =>
+        `<option value="${cat.id}">${cat.name}</option>`
+    ).join('');
+}
+
+function toggleCategories() {
+    const content = document.getElementById('categoriesContent');
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+}
+
+// وظائف Bubble Popup
+function showCategoryPopup() {
+    document.getElementById('newCategoryName').value = '';
+    document.getElementById('categoryPopup').style.display = 'block';
+    toggleCategories();
+}
+
+function hideCategoryPopup() {
+    document.getElementById('categoryPopup').style.display = 'none';
+}
+
+function saveNewCategory() {
+    const categoryName = document.getElementById('newCategoryName').value;
+    if (categoryName && categoryName.trim() !== "") {
+        const newCategory = {
+            "name": categoryName,
+            "id": "cat_" + Date.now(),
+            "color": "#4CAF50"
+        };
+        categories.push(newCategory);
+        
+        saveCategories()
+            .then(() => {
+                fillCategoriesMenu();
+                fillCategorySelect();
+                hideCategoryPopup();
+            })
+            .catch(console.error);
+    }
+}
+
+// وظائف إدارة الروابط
+function fillLinks() {
+    const linksContainer = document.getElementById("linksCard");
+    linksContainer.innerHTML = "";
+
+    let filteredLinks = links;
+    if (currentCategory === "favorites") {
+        filteredLinks = links.filter(link => link.isFavorite);
+    } else if (currentCategory === "all") {
+        // عرض جميع الروابط
+    } else if (currentCategory !== "main") {
+        filteredLinks = links.filter(link => link.category === currentCategory);
+    } else {
+        // عرض الروابط التي ليس لها ملف محدد (الرئيسية)
+        filteredLinks = links.filter(link => !link.category || link.category === "main");
+    }
+
+    filteredLinks.forEach((link, index) => {
+        const actualIndex = links.findIndex(l => l.link === link.link && l.title === link.title);
+
+        const linkElement = document.createElement('div');
+        linkElement.className = 'contantLinks';
+
+        linkElement.innerHTML = `
+            <div class="link-actions">
+                <i class="fas fa-ellipsis-v menu-trigger" onclick="toggleMenu(event, ${actualIndex})"></i>
+            </div>
+            <a href="${link.link}" target="${localStorage.getItem("OpenLinks") || "_self"}">
+                <div class="card">
+                    <img src="${link.customImage || link.imge}" alt="">
+                    <h5>${link.title}</h5>
+                </div>
+            </a>
+        `;
+
+        linkElement.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            createContextMenu(e, actualIndex);
+        });
+
+        linksContainer.appendChild(linkElement);
+    });
+    
+    // تطبيق لون الكروت الموحد
+    applyCardColors();
+    
+    // تحديث الروابط المثبته في قسم AllLinks
+    updatePinnedLinks();
+}
+
+// تحديث الروابط المثبته في قسم AllLinks
+function updatePinnedLinks() {
+    const allLinksContainer = document.querySelector(".AllLinks");
+    allLinksContainer.innerHTML = "";
+    
+    // تصفية الروابط المفضلة فقط
+    const favoriteLinks = links.filter(link => link.isFavorite);
+    
+    // إضافة الروابط المفضلة إلى قسم AllLinks
+    favoriteLinks.forEach((link, index) => {
+        const linkElement = document.createElement('div');
+        linkElement.className = 'link';
+        
+        linkElement.innerHTML = `
+            <a href="${link.link}" target="${localStorage.getItem("OpenLinks") || "_self"}">
+                <img src="${link.customImage || link.imge}" alt="">
+                <span></span>
+                <h5>${link.title}</h5>
+            </a>
+        `;
+        
+        allLinksContainer.appendChild(linkElement);
+    });
+}
+
+function toggleMenu(event, index) {
+    event.stopPropagation();
+    const allMenus = document.querySelectorAll('.link-menu');
+    allMenus.forEach(menu => {
+        if (menu.id !== `contextMenu-${index}`) {
+            menu.remove();
+        }
+    });
+
+    createContextMenu(event, index);
+}
+
+function createContextMenu(e, linkIndex) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // إغلاق القائمة السابقة إذا كانت مفتوحة
+    if (lastOpenedMenu) {
+        lastOpenedMenu.remove();
+    }
+
+    const link = links[linkIndex];
+    if (!link) return;
+
+    const menu = document.createElement('div');
+    menu.id = `contextMenu-${linkIndex}`;
+    menu.className = 'context-menu show';
+
+    // حساب الموضع مع مراعاة حدود الشاشة
+    const x = Math.min(e.clientX, window.innerWidth - 220);
+    let y = e.clientY;
+    
+    // إذا كانت القائمة ستظهر في أسفل الشاشة، نحركها لأعلى
+    if (y > window.innerHeight - 350) {
+        y = window.innerHeight - 350;
+    }
+
+    menu.style.left = `${x}px`;
+    menu.style.top = `${y}px`;
+
+    const favoriteItem = document.createElement('div');
+    favoriteItem.className = 'context-menu-item';
+    favoriteItem.innerHTML = `
+        <i class="fas fa-star ${link.isFavorite ? 'favorite-item' : ''}"></i>
+        ${link.isFavorite ? 'إزالة من المفضلة' : 'إضافة إلى المفضلة'}
+    `;
+    favoriteItem.onclick = (ev) => {
+        ev.stopPropagation();
+        toggleFavorite(linkIndex);
+        hideMenu(menu);
+    };
+
+    const editNameItem = document.createElement('div');
+    editNameItem.className = 'context-menu-item';
+    editNameItem.innerHTML = '<i class="fas fa-edit"></i> تغيير الاسم';
+    editNameItem.onclick = (ev) => {
+        ev.stopPropagation();
+        showEditNamePopup(linkIndex);
+        hideMenu(menu);
+    };
+
+    const editUrlItem = document.createElement('div');
+    editUrlItem.className = 'context-menu-item';
+    editUrlItem.innerHTML = '<i class="fas fa-link"></i> تغيير الرابط';
+    editUrlItem.onclick = (ev) => {
+        ev.stopPropagation();
+        showEditUrlPopup(linkIndex);
+        hideMenu(menu);
+    };
+
+    const editImageItem = document.createElement('div');
+    editImageItem.className = 'context-menu-item';
+    editImageItem.innerHTML = '<i class="fas fa-image"></i> تعديل الصورة';
+    editImageItem.onclick = (ev) => {
+        ev.stopPropagation();
+        showImageChangePopup(linkIndex);
+        hideMenu(menu);
+    };
+
+    const moveToItem = document.createElement('div');
+    moveToItem.className = 'context-menu-item submenu';
+    moveToItem.innerHTML = '<i class="fas fa-folder"></i> نقل إلى قائمة';
+
+    const submenu = document.createElement('div');
+    submenu.className = 'submenu-items';
+
+    // إضافة خيار الرئيسية أولاً
+    const mainCategory = categories.find(cat => cat.id === "main");
+    if (mainCategory && link.category !== "main") {
+        const submenuItem = document.createElement('div');
+        submenuItem.className = 'submenu-item';
+        submenuItem.textContent = `${mainCategory.name}`;
+        submenuItem.onclick = (ev) => {
+            ev.stopPropagation();
+            links[linkIndex].category = "main";
+            saveLinks()
+                .then(() => fillLinks())
+                .catch(console.error);
+            hideMenu(menu);
+        };
+        submenu.appendChild(submenuItem);
+    }
+
+    // إضافة باقي الفئات
+    categories.forEach(category => {
+        if (category.id !== link.category && !category.system && category.id !== "main") {
+            const submenuItem = document.createElement('div');
+            submenuItem.className = 'submenu-item';
+            submenuItem.textContent = `${category.name}`;
+            submenuItem.onclick = (ev) => {
+                ev.stopPropagation();
+                links[linkIndex].category = category.id;
+                saveLinks()
+                    .then(() => fillLinks())
+                    .catch(console.error);
+                hideMenu(menu);
+            };
+            submenu.appendChild(submenuItem);
+        }
+    });
+
+    moveToItem.appendChild(submenu);
+
+    // إضافة خيار القص
+    const cutItem = document.createElement('div');
+    cutItem.className = 'context-menu-item';
+    cutItem.innerHTML = '<i class="fas fa-cut"></i> قص الرابط';
+    cutItem.onclick = (ev) => {
+        ev.stopPropagation();
+        cutLink(linkIndex);
+        hideMenu(menu);
+    };
+
+    // إضافة خيار اللصق إذا كان هناك رابط مقطوع
+    const pasteItem = document.createElement('div');
+    pasteItem.className = 'context-menu-item';
+    pasteItem.innerHTML = '<i class="fas fa-paste"></i> لصق الرابط';
+    pasteItem.onclick = (ev) => {
+        ev.stopPropagation();
+        pasteLink(linkIndex);
+        hideMenu(menu);
+    };
+
+    // تعطيل خيار اللصق إذا لم يكن هناك رابط مقطوع
+    if (cutLinkIndex === null) {
+        pasteItem.style.opacity = '0.5';
+        pasteItem.style.cursor = 'not-allowed';
+        pasteItem.onclick = null;
+    }
+
+    const deleteItem = document.createElement('div');
+    deleteItem.className = 'context-menu-item delete';
+    deleteItem.innerHTML = '<i class="fas fa-trash"></i> حذف الرابط';
+    deleteItem.onclick = (ev) => {
+        ev.stopPropagation();
+        showDeletePopup(linkIndex);
+        hideMenu(menu);
+    };
+
+    menu.appendChild(favoriteItem);
+    menu.appendChild(editNameItem);
+    menu.appendChild(editUrlItem);
+    menu.appendChild(editImageItem);
+    menu.appendChild(moveToItem);
+    menu.appendChild(cutItem);
+    menu.appendChild(pasteItem);
+    menu.appendChild(deleteItem);
+
+    document.body.appendChild(menu);
+    lastOpenedMenu = menu;
+
+    // إغلاق القائمة عند النقر خارجها
+    const closeMenu = (ev) => {
+        if (!menu.contains(ev.target)) {
+            hideMenu(menu);
+        }
+    };
+
+    document.addEventListener('click', closeMenu);
+}
+
+// وظائف نافذة تغيير الصورة
+function showImageChangePopup(index) {
+    currentLinkForImageChange = index;
+    const link = links[index];
+    const preview = document.getElementById('imageChangePreview');
+    
+    // عرض الصورة الحالية إذا كانت موجودة
+    if (link.customImage) {
+        preview.src = link.customImage;
+    } else {
+        preview.src = link.imge;
+    }
+    
+    // إعداد حدث تغيير الصورة
+    document.getElementById('imageChangeInput').onchange = function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+    
+    // عرض النافذة
+    document.getElementById('imageChangePopup').style.display = 'block';
+}
+
+function hideImageChangePopup() {
+    document.getElementById('imageChangePopup').style.display = 'none';
+    document.getElementById('imageChangeInput').value = '';
+    currentLinkForImageChange = null;
+}
+
+function confirmImageChange() {
+    const fileInput = document.getElementById('imageChangeInput');
+    const file = fileInput.files[0];
+    
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            links[currentLinkForImageChange].customImage = e.target.result;
+            saveLinks()
+                .then(() => {
+                    fillLinks();
+                    hideImageChangePopup();
+                    showSuccessMessage('تم تحديث صورة الرابط بنجاح');
+                })
+                .catch(console.error);
+        };
+        reader.readAsDataURL(file);
+    } else {
+        // إذا لم يتم اختيار صورة جديدة، نستخدم الصورة الحالية
+        hideImageChangePopup();
+    }
+}
+
+function hideMenu(menu) {
+    menu.classList.remove('show');
+    setTimeout(() => {
+        if (menu.parentNode) {
+            menu.remove();
+        }
+    }, 300);
+}
+
+function toggleFavorite(index) {
+    links[index].isFavorite = !links[index].isFavorite;
+    saveLinks()
+        .then(() => {
+            fillLinks();
+            updatePinnedLinks(); // تحديث الروابط المثبته عند التغيير
+        })
+        .catch(console.error);
+}
+
+// وظيفة قص الرابط
+function cutLink(index) {
+    // إزالة أي قص سابق
+    document.querySelectorAll('.cut-link').forEach(el => el.classList.remove('cut-link'));
+
+    cutLinkIndex = index;
+    showCutPasteNotification();
+    enterCutPasteMode();
+
+    // إضافة تأثير على الرابط المقطوع
+    const linkElements = document.querySelectorAll('.contantLinks');
+    const actualIndex = getActualLinkIndex(index);
+    if (linkElements[actualIndex]) {
+        linkElements[actualIndex].classList.add('cut-link');
+    }
+}
+
+// وظيفة لصق الرابط
+function pasteLink(targetIndex) {
+    if (cutLinkIndex === null || cutLinkIndex === targetIndex) {
+        return;
+    }
+
+    // تبديل المواقع بين الرابطين
+    const temp = links[cutLinkIndex];
+    links[cutLinkIndex] = links[targetIndex];
+    links[targetIndex] = temp;
+
+    saveLinks()
+        .then(() => {
+            fillLinks();
+            exitCutPasteMode();
+            cutLinkIndex = null;
+
+            // إخفاء الإشعار
+            const notification = document.querySelector('.cut-paste-notification');
+            if (notification) {
+                notification.remove();
+            }
+
+            // عرض رسالة نجاح
+            showSuccessMessage('تم تبديل مواقع الروابط بنجاح');
+        })
+        .catch(console.error);
+}
+
+// عرض إشعار القص واللصق
+function showCutPasteNotification() {
+    // إزالة أي إشعارات موجودة مسبقًا
+    const existingNotification = document.querySelector('.cut-paste-notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+
+    const notification = document.createElement('div');
+    notification.className = 'cut-paste-notification';
+    notification.innerHTML = `
+        <i class="fas fa-cut"></i>
+        <span>تم تحديد رابط للقص. انقر على رابط آخر للصق</span>
+        <button class="cancel" onclick="cancelCutPaste()"><i class="fas fa-times"></i> إلغاء</button>
+    `;
+
+    document.body.appendChild(notification);
+
+    // إخفاء الإشعار بعد 5 ثواني إذا لم يتم إلغاؤه
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.style.animation = 'toastSlideOut 0.3s ease-in';
+            notification.addEventListener('animationend', () => {
+                if (notification.parentNode) {
+                    notification.remove();
+                    exitCutPasteMode();
+                    cutLinkIndex = null;
+                }
+            });
+        }
+    }, 5000);
+}
+
+// إلغاء عملية القص واللصق
+function cancelCutPaste() {
+    const notification = document.querySelector('.cut-paste-notification');
+    if (notification) {
+        notification.remove();
+    }
+    exitCutPasteMode();
+    cutLinkIndex = null;
+}
+
+// الدخول في وضع القص واللصق
+function enterCutPasteMode() {
+    const linksContainer = document.getElementById('linksCard');
+    linksContainer.classList.add('cut-paste-mode');
+
+    const linkElements = document.querySelectorAll('.contantLinks');
+    linkElements.forEach((el, index) => {
+        el.onmouseenter = () => {
+            if (cutLinkIndex !== null && index !== cutLinkIndex) {
+                el.classList.add('paste-target');
+            }
+        };
+
+        el.onmouseleave = () => {
+            el.classList.remove('paste-target');
+        };
+
+        el.onclick = (e) => {
+            if (cutLinkIndex !== null && !e.target.closest('.link-actions')) {
+                const actualIndex = getActualLinkIndex(index);
+                pasteLink(actualIndex);
+            }
+        };
+    });
+}
+
+// الخروج من وضع القص واللصق
+function exitCutPasteMode() {
+    const linksContainer = document.getElementById('linksCard');
+    linksContainer.classList.remove('cut-paste-mode');
+
+    const linkElements = document.querySelectorAll('.contantLinks');
+    linkElements.forEach(el => {
+        el.onmouseenter = null;
+        el.onmouseleave = null;
+        el.onclick = null;
+        el.classList.remove('paste-target', 'cut-link');
+    });
+}
+
+// الحصول على الفهرس الفعلي للرابط في المصفوفة
+function getActualLinkIndex(filteredIndex) {
+    let filteredLinks = links;
+    if (currentCategory === "favorites") {
+        filteredLinks = links.filter(link => link.isFavorite);
+    } else if (currentCategory === "all") {
+        // جميع الروابط
+    } else if (currentCategory !== "main") {
+        filteredLinks = links.filter(link => link.category === currentCategory);
+    } else {
+        // الروابط الرئيسية
+        filteredLinks = links.filter(link => !link.category || link.category === "main");
+    }
+
+    const link = filteredLinks[filteredIndex];
+    return links.findIndex(l => l.link === link.link && l.title === link.title);
+}
+
+// نوافذ التعديل المنفصلة
+function showEditNamePopup(index) {
+    currentLinkIndex = index;
+    document.getElementById('editNameInput').value = links[index].title;
+    document.getElementById('editNamePopup').style.display = 'flex';
+}
+
+function hideEditNamePopup() {
+    document.getElementById('editNamePopup').style.display = 'none';
+}
+
+function saveNameChanges() {
+    const newName = document.getElementById('editNameInput').value;
+    if (newName && newName.trim() !== "") {
+        links[currentLinkIndex].title = newName;
+        saveLinks()
+            .then(() => {
+                fillLinks();
+                hideEditNamePopup();
+            })
+            .catch(console.error);
+    }
+}
+
+function showEditUrlPopup(index) {
+    currentLinkIndex = index;
+    document.getElementById('editUrlInput').value = links[index].link;
+    document.getElementById('editUrlPopup').style.display = 'flex';
+}
+
+function hideEditUrlPopup() {
+    document.getElementById('editUrlPopup').style.display = 'none';
+}
+
+function saveUrlChanges() {
+    const newUrl = document.getElementById('editUrlInput').value;
+    if (newUrl && newUrl.trim() !== "") {
+        links[currentLinkIndex].link = newUrl;
+
+        if (!links[currentLinkIndex].customImage) {
+            const domain = extractDomain(newUrl);
+            links[currentLinkIndex].imge = `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
+        }
+
+        saveLinks()
+            .then(() => {
+                fillLinks();
+                hideEditUrlPopup();
+            })
+            .catch(console.error);
+    }
+}
+
+function showDeletePopup(index) {
+    currentLinkIndex = index;
+    document.getElementById('deleteConfirmPopup').style.display = 'flex';
+}
+
+function hideDeletePopup() {
+    document.getElementById('deleteConfirmPopup').style.display = 'none';
+}
+
+function confirmDeleteLink() {
+    links.splice(currentLinkIndex, 1);
+    saveLinks()
+        .then(() => {
+            fillLinks();
+            hideDeletePopup();
+        })
+        .catch(console.error);
+}
+
+function showSuccessMessage(message) {
+    const toast = document.createElement('div');
+    toast.className = 'success-toast';
+    toast.textContent = message;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.animation = 'toastSlideOut 0.3s ease-in';
+        toast.addEventListener('animationend', () => toast.remove());
+    }, 3000);
+}
+
+function extractDomain(url) {
+    try {
+        if (!url.startsWith('http://') && !url.startsWith('https://')) {
+            url = 'http://' + url;
+        }
+        const parsedUrl = new URL(url);
+        return parsedUrl.hostname.replace(/^www\./, '');
+    } catch (e) {
+        console.error("Error extracting domain:", e);
+        return url;
+    }
+}
+
+function addCardLinks() {
+    const fileInput = document.getElementById('customImageInput');
+    const file = fileInput.files[0];
+    
+    if (inputName.value == '' || inputLinks.value == '') {
+        document.getElementById('alertMessage').style.display = 'block';
+        inputLinks.focus();
+        return;
+    }
+
+    const domain = extractDomain(inputLinks.value);
+    const selectedCategory = document.getElementById('categorySelect').value || 'main';
+
+    const linkTask = {
+        "link": inputLinks.value,
+        "imge": `https://www.google.com/s2/favicons?domain=${domain}&sz=256`,
+        "title": inputName.value,
+        "category": selectedCategory,
+        "isFavorite": false,
+        "customImage": null,
+        "color": localStorage.getItem("colorCard") || '#4CAF50'
+    };
+
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            linkTask.customImage = e.target.result;
+            finishAddingLink();
+        };
+        reader.readAsDataURL(file);
+    } else {
+        finishAddingLink();
+    }
+
+    function finishAddingLink() {
+        links.push(linkTask);
+        saveLinks()
+            .then(() => {
+                fillLinks();
+                document.getElementById("blour").style.display = "none";
+                inpClerText();
+            })
+            .catch(console.error);
+    }
+}
+
+// معالجة اختيار صورة مخصصة
+document.getElementById('customImageInput').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    const preview = document.getElementById('customImagePreview');
+    
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            preview.src = e.target.result;
+            preview.style.display = 'block';
+            document.querySelector('.image-circle i').style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+// وظائف إدارة لوحة التحكم
+let Dashboard = document.querySelector(".Dashboard");
+
+function HedAndShowDash() {
+    Dashboard.style.display = "block";
+    ThisBoxSetting.style.display = "none";
+}
+
+function HedDashboard() {
+    Dashboard.style.display = "none";
+}
+
+function SmollDashboard() {
+    if (Dashboard.style.height == "50%") {
+        Dashboard.style.cssText = `height: 95%; width: 95%; display:block;`;
+    } else {
+        Dashboard.style.cssText = `height: 50%; width: 50%; display:block;`;
+    }
+}
+
+function MinimizeDashboard() {
+    if (Dashboard.style.top == "100%") {
+        Dashboard.style.cssText = `top: 50%; transform: translate(-50% , -50%); display:block;`;
+    } else {
+        Dashboard.style.cssText = `top: 100%; transform: translate(-50% , -9%); display:block;`;
+    }
+}
+
+// وظائف الألوان والخطوط
+function ColorCardS() {
+    let colorCard = document.getElementById("colorCard");
+    
+    // تحميل لون الكروت من IndexedDB
+    const transaction = db.transaction([SETTINGS_STORE], "readonly");
+    const settingsStore = transaction.objectStore(SETTINGS_STORE);
+    
+    const request = settingsStore.get("colorCard");
+    
+    request.onsuccess = (event) => {
+        if (event.target.result) {
+            const color = event.target.result.value;
+            colorCard.value = color;
+            document.documentElement.style.setProperty('--card-color', color);
+            document.documentElement.style.setProperty('--categories-toggle-bg', color);
+            applyCardColors();
+            Searchgoogle();
+        }
+    };
+    
+    colorCard.addEventListener("input", () => {
+        const color = colorCard.value;
+        saveSetting("colorCard", color)
+            .then(() => {
+                document.documentElement.style.setProperty('--card-color', color);
+                document.documentElement.style.setProperty('--categories-toggle-bg', color);
+                applyCardColors();
+                Searchgoogle();
+            })
+            .catch(console.error);
+    });
+}
+
+function applyCardColors() {
+    const transaction = db.transaction([SETTINGS_STORE], "readonly");
+    const settingsStore = transaction.objectStore(SETTINGS_STORE);
+    
+    const request = settingsStore.get("colorCard");
+    
+    request.onsuccess = (event) => {
+        if (event.target.result) {
+            const locCardColor = event.target.result.value;
+            let cards = document.querySelectorAll(".card");
+            let thisBoxSetting = document.getElementById("ThisBoxSetting").children;
+
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].style.backgroundColor = locCardColor;
+            }
+
+            for (let i = 0; i < thisBoxSetting.length; i++) {
+                thisBoxSetting[i].style.backgroundColor = locCardColor;
+            }
+
+            document.getElementById("colorCard").value = locCardColor;
+        }
+    };
+}
+
+function Searchgoogle() {
+    const transaction = db.transaction([SETTINGS_STORE], "readonly");
+    const settingsStore = transaction.objectStore(SETTINGS_STORE);
+    
+    const request = settingsStore.get("colorCard");
+    
+    request.onsuccess = (event) => {
+        if (event.target.result) {
+            const locCardColor = event.target.result.value;
+            let contantInput = document.getElementById("contantInput");
+            let iconAdd = document.querySelector(".fa-square-plus");
+            let scrch = document.getElementById("scrch");
+            contantInput.style.background = locCardColor;
+            scrch.style.background = locCardColor;
+            iconAdd.style.color = locCardColor;
+        }
+    };
+}
+
+let FontBlack = document.getElementById("FontBlack");
+let FontWhite = document.getElementById("FontWhite");
+
+FontBlack.addEventListener("click", () => {
+    saveSetting("colorFonts", "black")
+        .then(() => colorsFontsf())
+        .catch(console.error);
+});
+
+FontWhite.addEventListener("click", () => {
+    saveSetting("colorFonts", "white")
+        .then(() => colorsFontsf())
+        .catch(console.error);
+});
+
+function colorsFontsf() {
+    const transaction = db.transaction([SETTINGS_STORE], "readonly");
+    const settingsStore = transaction.objectStore(SETTINGS_STORE);
+    
+    const request = settingsStore.get("colorFonts");
+    
+    request.onsuccess = (event) => {
+        if (event.target.result) {
+            const localColorFonts = event.target.result.value;
+            let heder = document.querySelectorAll("h5");
+            for (let i = 0; i < heder.length; i++) {
+                heder[i].style.color = localColorFonts;
+            }
+        }
+    };
+}
+
+// وظائف الصور المتحركة
+let ImgeGif = document.querySelector("#ImgeGif");
+
+function RemoveImge() {
+    ImgeGif.style.display = "none";
+    localStorage.setItem("ImgeGif", "none");
+}
+
+function ViewImge() {
+    ImgeGif.style.display = "block";
+    localStorage.setItem("ImgeGif", "block");
+}
+
+function Img1() { ViewImge(); ImgeGif.src = "ImgMoveng/default/1.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/1.gif"); }
+function Img2() { ViewImge(); ImgeGif.src = "ImgMoveng/default/2.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/2.gif"); }
+function Img3() { ViewImge(); ImgeGif.src = "ImgMoveng/default/3.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/3.gif"); }
+function Img4() { ViewImge(); ImgeGif.src = "ImgMoveng/default/4.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/4.gif"); }
+function Img5() { ViewImge(); ImgeGif.src = "ImgMoveng/default/5.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/5.gif"); }
+function Img6() { ViewImge(); ImgeGif.src = "ImgMoveng/default/6.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/6.gif"); }
+function Img7() { ViewImge(); ImgeGif.src = "ImgMoveng/default/7.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/7.gif"); }
+function Img8() { ViewImge(); ImgeGif.src = "ImgMoveng/default/8.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/8.gif"); }
+function Img9() { ViewImge(); ImgeGif.src = "ImgMoveng/default/9.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/9.gif"); }
+function Img12() { ViewImge(); ImgeGif.src = "ImgMoveng/default/12.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/12.gif"); }
+function Img13() { ViewImge(); ImgeGif.src = "ImgMoveng/default/13.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/13.gif"); }
+function Img23() { ViewImge(); ImgeGif.src = "ImgMoveng/default/23.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/23.gif"); }
+function Img25() { ViewImge(); ImgeGif.src = "ImgMoveng/default/25.gif"; localStorage.setItem("ImgeGif", "ImgMoveng/default/25.gif"); }
+
+let inputImgeGIF = document.querySelector("#inputImgeGIF");
+let buttonImgeGIF = document.querySelector("#buttonImgeGIF");
+
+buttonImgeGIF.onclick = function () {
+    if (inputImgeGIF.value) {
+        let changImgeInput = ImgeGif.src = `ImgMoveng/${inputImgeGIF.value}`;
+        localStorage.setItem("ImgeGif", changImgeInput);
+        inputImgeGIF.value = "";
+    }
+}
+
+function GetImgeFromLocal() {
+    let localImgeGif = localStorage.getItem("ImgeGif");
+    if (localImgeGif === "none") {
+        ImgeGif.style.display = "none";
+    } else if (localImgeGif) {
+        ImgeGif.src = localImgeGif;
+        ImgeGif.style.display = "block";
+    }
+}
+
+// وظائف الحركات
+let Animations = document.querySelectorAll(".Animations");
+function StartAnmi() {
+    Animations[0].style.display = "block";
+    Animations[1].style.display = "block";
+    localStorage.setItem("Animations", "block");
+}
+function StopAnmi() {
+    localStorage.setItem("Animations", "none");
+    Animations[0].style.display = "none";
+    Animations[1].style.display = "none";
+}
+
+// وظائف خلفية الصفحة
+let imageInput = document.querySelector("#imageInput");
+function changBackground() {
+    localStorage.setItem("backgroundimge", imageInput.value);
+    imageInput.value = "";
+    setImgeBAckground();
+}
+
+function setImgeBAckground() {
+    let gitBAckground = localStorage.getItem(`backgroundimge`);
+    if (gitBAckground) {
+        document.body.style.backgroundImage = `url(${gitBAckground})`;
+        document.getElementById('backgroundBlur').style.backgroundImage = `url(${gitBAckground})`;
+        document.getElementById('blurPreview').style.backgroundImage = `url(${gitBAckground})`;
+    }
+}
+
+let backgroundInput = document.getElementById("backgroundInput");
+let myImageBackground = document.getElementById("myImageBackground");
+
+backgroundInput.addEventListener('change', function(event) {
+    if (event.target.files && event.target.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            myImageBackground.src = e.target.result;
+            localStorage.setItem("backgroundimge", e.target.result);
+            document.body.style.backgroundImage = `url(${e.target.result})`;
+            document.getElementById('backgroundBlur').style.backgroundImage = `url(${e.target.result})`;
+            document.getElementById('blurPreview').style.backgroundImage = `url(${e.target.result})`;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+});
+
+// وظائف التحكم في تأثير البلور
+function setupBlurControls() {
+    const blurSlider = document.getElementById('blurSlider');
+    const blurValue = document.getElementById('blurValue');
+    const blurPreview = document.getElementById('blurPreview');
+    
+    // تحديث معاينة البلور عند تحريك السلايدر
+    blurSlider.addEventListener('input', function() {
+        const blurAmount = this.value;
+        blurValue.textContent = `${blurAmount}px`;
+        blurPreview.style.setProperty('--blur-amount', `${blurAmount}px`);
+    });
+    
+    // تحميل إعدادات البلور المحفوظة
+    const transaction = db.transaction([SETTINGS_STORE], "readonly");
+    const settingsStore = transaction.objectStore(SETTINGS_STORE);
+    
+    const request = settingsStore.get("backgroundBlur");
+    
+    request.onsuccess = (event) => {
+        if (event.target.result) {
+            const blurAmount = event.target.result.value;
+            blurSlider.value = blurAmount;
+            blurValue.textContent = `${blurAmount}px`;
+            document.getElementById('backgroundBlur').style.filter = `blur(${blurAmount}px)`;
+            blurPreview.style.setProperty('--blur-amount', `${blurAmount}px`);
+        }
+    };
+}
+
+function saveBlurSettings() {
+    const blurAmount = document.getElementById('blurSlider').value;
+    document.getElementById('backgroundBlur').style.filter = `blur(${blurAmount}px)`;
+    
+    saveSetting("backgroundBlur", blurAmount)
+        .then(() => {
+            showSuccessMessage('تم حفظ إعدادات البلور بنجاح');
+        })
+        .catch(console.error);
+}
+
+// وظائف البحث
+function searchGoogle() {
+    const searchTerm = document.getElementById('inpPass').value;
+    if (searchTerm.trim() !== '') {
+        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(searchTerm)}`;
+        window.open(searchUrl, localStorage.getItem("OpenLinks") || "_self");
+    }
+    inpPass.value = "";
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        searchGoogle();
+    }
+}
+
+// وظائف الإعدادات
+let ThisBoxSetting = document.getElementById("ThisBoxSetting");
+
+function settings_box() {
+    ThisBoxSetting.style.display = "flex";
+}
+
+window.addEventListener("mouseup", function (event) {
+    let box = document.querySelector(".settings");
+    if (event.target != box && !box.contains(event.target)) {
+        box.style.display = 'none';
+    }
+});
+
+let linksTarget = document.querySelectorAll("a");
+
+function self() {
+    saveSetting("OpenLinks", "_self")
+        .then(() => {
+            for (let i = 0; i < linksTarget.length; i++) {
+                linksTarget[i].target = "_self";
+            }
+        })
+        .catch(console.error);
+}
+
+function Blank() {
+    saveSetting("OpenLinks", "_blank")
+        .then(() => {
+            for (let i = 0; i < linksTarget.length; i++) {
+                linksTarget[i].target = "_blank";
+            }
+        })
+        .catch(console.error);
+}
+
+function getTarget() {
+    const transaction = db.transaction([SETTINGS_STORE], "readonly");
+    const settingsStore = transaction.objectStore(SETTINGS_STORE);
+    
+    const request = settingsStore.get("OpenLinks");
+    
+    request.onsuccess = (event) => {
+        if (event.target.result) {
+            const target = event.target.result.value;
+            for (let i = 0; i < linksTarget.length; i++) {
+                linksTarget[i].target = target;
+            }
+        }
+    };
+}
+
+// وظيفة الساعة والتاريخ
+function updateClock() {
+    const now = new Date();
+    now.toLocaleString('en-US', { timeZone: 'Africa/Cairo' });
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    const clockElement = document.getElementById('clock');
+    clockElement.textContent = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)} ${ampm}`;
+    
+    // تحديث التاريخ
+    updateDate();
+}
+
+function updateDate() {
+    const now = new Date();
+    const arabicMonths = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", 
+                         "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
+    const arabicDays = ["الأحد", "الإثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+    
+    const dayName = arabicDays[now.getDay()];
+    const day = now.getDate();
+    const month = arabicMonths[now.getMonth()];
+    const year = now.getFullYear();
+    
+    const dateElement = document.getElementById('date');
+    dateElement.textContent = `${dayName}، ${day} ${month} ${year}`;
+}
+
+function formatTime(time) {
+    return time < 10 ? `0${time}` : time;
+}
+
+// وظائف لوحة التحكم
+function MinColor() {
+    document.getElementById("ImgeGIFMove").style.display = "none";
+    document.querySelector(".animation").style.display = "none";
+    document.querySelector(".backgroundImge").style.display = "none";
+}
+
+function Animation() {
+    document.getElementById("ImgeGIFMove").style.display = "none";
+    document.querySelector(".animation").style.display = "flex";
+    document.querySelector(".backgroundImge").style.display = "none";
+}
+
+function ImgeMove() {
+    document.getElementById("ImgeGIFMove").style.display = "flex";
+    document.querySelector(".animation").style.display = "none";
+    document.querySelector(".backgroundImge").style.display = "none";
+}
+
+function Background() {
+    document.getElementById("ImgeGIFMove").style.display = "none";
+    document.querySelector(".animation").style.display = "none";
+    document.querySelector(".backgroundImge").style.display = "flex";
+}
+
+// تهيئة الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+    initDB()
+        .then(() => {
+            loadDarkMode()
+                .then(() => {
+                    fillCategoriesMenu();
+                    fillLinks();
+
+                    setInterval(updateClock, 1000);
+                    updateClock();
+
+                    getTarget();
+                    ColorCardS();
+                    colorsFontsf();
+                    Searchgoogle();
+                    GetImgeFromLocal();
+
+                    let set_background = localStorage.getItem(`backgroundimge`);
+                    if (set_background) {
+                        document.body.style.backgroundImage = `url(${set_background})`;
+                        document.getElementById('backgroundBlur').style.backgroundImage = `url(${set_background})`;
+                        document.getElementById('blurPreview').style.backgroundImage = `url(${set_background})`;
+                    }
+
+                    Animations[0].style.display = localStorage.getItem("Animations") || "none";
+                    Animations[1].style.display = localStorage.getItem("Animations") || "none";
+
+                    munSet();
+                    setupBlurControls(); // تهيئة عناصر التحكم في البلور
+                })
+                .catch(console.error);
+        })
+        .catch(console.error);
+});
+
+function munSet() {
+    let settings = document.getElementById("google_box");
+    let mun = document.querySelector(".Google");
+    settings.onclick = function () {
+        mun.style.display = "flex";
+    }
+    window.addEventListener('mouseup', function (event) {
+        var box = document.querySelector(".Google");
+        if (event.target != box && !box.contains(event.target)) {
+            box.style.display = 'none';
+        }
+    });
+}
+
+// إخفاء القوائم عند النقر خارجها
+document.addEventListener('click', (e) => {
+    const categoriesContent = document.getElementById('categoriesContent');
+    if (!e.target.closest('.categories-menu')) {
+        categoriesContent.style.display = 'none';
+    }
+    
+    // إخفاء قائمة السياق عند النقر خارجها
+    const contextMenu = document.getElementById('contextMenu');
+    if (contextMenu && !e.target.closest('.context-menu')) {
+        contextMenu.remove();
+    }
+});
+
+// منع القائمة السياقية الافتراضية عند النقر بزر الماوس الأيمن
+document.addEventListener('contextmenu', (e) => {
+    if (e.target.closest('.contantLinks')) {
+        e.preventDefault();
+    }
+});
+</script>
+</body>
+</html>
